@@ -11,7 +11,17 @@ public class Motor {
     }
     
     void asignarTipo(String tipo) {
-	this.tipo = tipo;
+	String[] tipos = {"electrico", "gasolina"};
+	boolean tipoValido = false;
+	
+	int i = 0;
+	while(i < tipos.length && !tipoValido) {
+	    tipoValido = (tipo == tipos[i]);
+	    i++;
+	}
+	
+	if(tipoValido) {
+	    this.tipo = tipo;
+	}
     }
-    
 }
